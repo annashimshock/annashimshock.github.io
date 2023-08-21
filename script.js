@@ -1,5 +1,5 @@
 const form = document.getElementById("quiz");
-form.addEventListener("submmit", submitted);
+form.addEventListener("submit", submitted);
 
 function submitted(event) {
     event.preventDefault();
@@ -24,4 +24,9 @@ function display(results) {
     const answerHeader = document.createElement('h1');
     answerHeader.textContent = "Your results are: ";
     quizSection.appendChild(answerHeader);
+    results.forEach((answer) => {
+        const result = document.createElement('p');
+        result.textContent = answer;
+        quizSection.appendChild(result);
+    });
 }
